@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Що подивитися</title>
+    <link rel="stylesheet" href="style.css" >
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let loginForm = document.querySelector('#loginForm');
+
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                let name = loginForm.querySelector('#username').value;
+                let password = loginForm.querySelector('#password').value;
+
+                loginForm.querySelector('.login-form').style.display = 'none';
+
+                let newDiv = document.createElement('div');
+                newDiv.innerHTML = '<p>Hello, <b>' + name + '</b>!</p><p>Тепер я знаю твій пароль! ' + password;
+                loginForm.appendChild(newDiv);
+                loginForm.style.width = 'auto';
+            })
+
+            let learnMore = document.querySelector('#learnMore');
+            let filmInfos = document.querySelectorAll('.film-box .film-info');
+            learnMore.addEventListener('click', function(event) {
+                filmInfos.forEach(function(filmInfo) {
+                let filmInfoText = filmInfo.querySelector('p');
+
+                if (filmInfoText.classList.contains('show')) {
+                    filmInfoText.classList.remove('show');
+                    learnMore.innerText = 'Дізнатись більше...';
+                } else {
+                filmInfoText.classList.add('show');
+                learnMore.innerText = 'Приховати текст';
+                }
+            })
+        })
+
+    })
+    </script> 
+
+</head>
+<body>
+    <div class="main">
+        <form action="#" method="post" id="loginForm">
+            <div class="login-form">
+                <label for="username">Ім'я</label>
+                <input type="text" name="username" id="username">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="password">
+                <button type="submit">Надіслати</button>
+            </div>
+        </form>
+
+        <div class="poster" style="background-image: url(https://cdn4.suspilne.media/images/resize/1040x1.78/817684cf0b1f5a95.jpg);">
+            <h1>10 найцікавіших мультфільмів для дітей та батьків</h1>
+            <h2>Від пригод у найглибших куточках галактики до історій про сім’ю, дружбу та кохання.</h2>
+        </div>
+        <div class="film-box">
+            <div class="film-info">
+                <img src="https://cdn4.suspilne.media/images/resize/794x0.1/56326b92e894e4e4.jpg" alt="">
+                <h3>Пригоди Тінтіна: Таємниця "Єдинорога"</h3>
+                <p>Молодий газетний репортер Тінтін подорожує по всьому світу і часто стає учасником захопливих пригод.</p>
+            </div>
+ 
+            <div class="film-info">
+                <img src="https://cdn4.suspilne.media/images/resize/794x0.1/897e7eab812ab8ae.jpg" alt="">
+                <h3>Планета скарбів</h3>
+                <p>Події мультфільму переносять глядача в альтернативне майбутнє, де люди живуть на штучних планетах і вільно переміщаються просторами безкрайнього космосу на вітрильних кораблях.</p>
+            </div>
+ 
+            <div class="film-info">
+                <img src="https://cdn4.suspilne.media/images/resize/794x0.1/6afc4ee75e63dcd9.jpg" alt="">
+                <h3>Як приборкати дракона: трилогія</h3>
+                <p>Величезні літаючі чудовиська завдають місцевим жителям безліч клопоту. Стати найкращим драконоборцем і отримати визнання всього поселення – велика честь та мрія кожного вікінга.</p>
+            </div>
+ 
+            <div class="film-info">
+                <img src="https://cdn4.suspilne.media/images/resize/794x0.1/b771041fdf9e859f.jpg" alt="">
+                <h3>Атлантида: Загублена імперія</h3>
+                <p>Молодий вчений-картограф на ім’я Майло Тетч мріє знайти Атлантиду – зниклий під водою континент, пошуки якого почав колись давно ще його дід.</p>
+            </div>
+        </div>
+
+        <div class="btn-box">
+            <button type="button" id="learnMore">Дізнатись більше...</button>
+            <button type="button" id="addMore">Додати</button>
+        </div>
+
+        <div id="infoLarge" style="display: none;">
+            <div class="film-info">
+                <img src="https://cdn4.suspilne.media/images/resize/794x0.1/56326b92e894e4e4.jpg" alt="">
+                <h3>Пригоди Тінтіна: Таємниця "Єдинорога"</h3>
+                <p class="show">Молодий газетний репортер Тінтін подорожує по всьому світу і часто стає учасником захопливих пригод.</p>
+            </div>
+        </div>
+
+        <form action="#" method="post" id="filmForm" style="display: none;">
+            <div class="form-element">
+                <label for="film_img">Зображення</label>
+                <input type="text" name="film_img" id="film_img">
+            </div>
+
+            <div class="form-element">
+                <label for="film_title">Назва фільму</label>
+                <input type="text" name="film_title" id="film_title"> 
+            </div>
+ 
+            <div class="form-element">
+                <label for="description">Опис</label>
+                <textarea name="description" id="description"></textarea>
+            </div>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </div>
+</body>
+</html>

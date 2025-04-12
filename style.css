@@ -1,0 +1,163 @@
+body {
+    background-color:azure;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: darkblue;
+    margin: 0;
+    position: relative;
+    height: 100vh;
+}
+.main {
+    width: 90%;
+    margin: auto;
+    padding-top: 36px;
+}
+h1 {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 12px;
+}
+.poster h2 {
+    text-align: center;
+    font-style: italic;
+    color: #55c5c6;
+    margin: 0;
+}
+.poster {
+    height: 208px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 4px #070707;
+    color: #f1b225;
+    position: relative;
+    padding-right: 12%;
+}
+.film-box {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 24px;
+    column-gap: 24px;
+    padding: 24px 0;
+}
+.film-info {
+    border-width: 3px;
+    border-color: brown;
+    border-style: double;
+    border-radius: 5px;
+    background-color: rgb(213, 228, 228);
+    width: 48%;
+    box-shadow: 1px 1px 2px 0px #161616;
+    padding-bottom: 12px;
+}
+.film-info:hover {
+    box-shadow: 1px 1px 2px 0px #8d2202;
+    border-color: darkblue;
+    border-style: solid;
+}
+.film-info img {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.film-info h3 {
+    margin: 0;
+    padding: 12px;
+    text-align: center;
+}
+.film-info p {
+    margin: 0;
+    padding: 0 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+}
+.film-info p.show {
+    max-height: 300px;
+}
+.btn-box {
+    text-align: right;
+    padding-bottom: 36px;
+}
+.btn-box button {
+    padding: 4px 8px;
+    border-width: 1px;
+    border-radius: 3px;
+    background-color: rgb(213, 228, 228);
+    cursor: pointer;
+    font-weight: bold;
+}
+#filmForm {
+    width: 60%;
+    margin: auto;
+    padding: 24px;
+    box-shadow: 1px 1px 4px black;
+}
+.form-element input[type=text], .form-element textarea {
+    width: 100%;
+}
+.form-element input {
+    height: 24px;
+}
+.form-element label {
+    font-weight: 500;
+}
+#filmForm div {
+    padding-bottom: 12px;
+}
+#filmForm button {
+    display: block;
+    padding: 4px 12px;
+    margin: auto;
+    background-color: rgb(213, 228, 228);
+    border-radius: 4px;
+}
+#filmForm button:hover {
+    background-color: darkblue;
+    color: #ffffff;
+}
+#loginForm {
+    position: absolute;
+    z-index: 1;
+    top: 2px;
+    right: 2px;
+    width: 15%;
+    padding: 12px;
+    background-color: #f0ffff;
+    box-shadow: 1px 1px 4px 0px #161616;
+}
+#loginForm label {
+    display: inline-block;
+    width: 100%;
+}
+#loginForm input {
+    width: 95%;
+    margin-bottom: 12px;
+    height: 24px;
+}
+#loginForm button {
+    display: block;
+    margin: 0 auto;
+    padding: 4px 12px;
+    background-color: darkblue;
+    color: white;
+    border-radius: 3px;
+}
+#loginForm div {
+    color: darkblue;
+    text-shadow: none;
+}
+
+#infoLarge {
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#infoLarge .film-info {
+    width: 100%;
+}
